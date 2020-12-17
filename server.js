@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
@@ -15,6 +16,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+const PWD = process.env.DB_PWD;
 const databaseUrl = `mongodb+srv://annisa:${encodeURIComponent(PWD)}@cluster0.l77tg.mongodb.net/funds`;
 
 mongoose.connect(databaseUrl, {
