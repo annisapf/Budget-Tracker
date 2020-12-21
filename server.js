@@ -21,6 +21,8 @@ const databaseUrl = `mongodb+srv://annisa:${encodeURIComponent(PWD)}@cluster0.l7
 
 mongoose.connect(databaseUrl, {
     useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
     useFindAndModify: false
 });
 
