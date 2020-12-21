@@ -19,7 +19,7 @@ app.use(express.static("public"));
 const PWD = process.env.DB_PWD;
 const databaseUrl = `mongodb+srv://annisa:${encodeURIComponent(PWD)}@cluster0.l77tg.mongodb.net/funds`;
 
-mongoose.connect(databaseUrl, {
+mongoose.connect(process.env.MONGODB_URI || databaseUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
